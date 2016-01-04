@@ -309,6 +309,14 @@ user code here.  The exception is org related code, which should be placed in
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
+  ;; fix anaconda-mode
+  (eval-after-load "company"
+    '(progn
+       (add-to-list 'company-backends 'company-anaconda)))
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (setq python-shell-interpreter "python")))
+
   ;; jshint
   (setq flycheck-jshintrc "~/.jshintrc")
 

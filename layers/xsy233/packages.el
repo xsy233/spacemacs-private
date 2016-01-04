@@ -8,7 +8,6 @@
         beacon
         markdown-mode
         evil
-        ycmd
         (org :location built-in)
         ))
 
